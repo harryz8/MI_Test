@@ -9,4 +9,6 @@ def load() -> dict[str, str]:
     return cvs
 
 if __name__ == "__main__":
-    print(preprocessing.tokenize("Hello World, I'm thinking of code."))
+    stepOne = preprocessing.Preprocessing("Hello World, I'm thinking of code.".lower(), "./stop_words.csv")
+    stepOne.removeStopWords()
+    print(stepOne.output())
