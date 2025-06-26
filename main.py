@@ -9,6 +9,9 @@ def load() -> dict[str, str]:
     return cvs
 
 if __name__ == "__main__":
-    stepOne = preprocessing.Preprocessing("Hello World, I'm thinking of code.".lower(), "./stop_words.csv")
+    stepOne = preprocessing.Preprocessing("Hello World, I'm thinking of code. I said super microcode!".lower(), "./stop_words.csv", "./prefixes.csv", "./postfixes.csv")
     stepOne.removeStopWords()
-    print(stepOne.output())
+    stepOne.removePrefixes()
+    stepOne.removePostfixes()
+    print(stepOne.outputTokens())
+    print(stepOne.outputFrequencyDict())
